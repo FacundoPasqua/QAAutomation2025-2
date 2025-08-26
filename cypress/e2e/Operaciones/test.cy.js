@@ -66,7 +66,7 @@ describe('Login Page Tests', () => {
 
     it('should allow user to enter email and password', () => {
         const email = 'test@example.com';
-        const password = 'password123';
+        const password = 'password';
 
         loginPage.enterEmail(email);
         loginPage.enterPassword(password);
@@ -76,7 +76,7 @@ describe('Login Page Tests', () => {
     });
 
     it('should login user with valid credentials', () => {
-        const email = 'valid@example.com';
+        const email = 'change@example.com';
         const password = 'validPassword';
 
         loginPage.enterEmail(email);
