@@ -7,9 +7,11 @@ it('Completo datos fallidos', () => {
 cy.visit('https://endearing-lollipop-19f16d.netlify.app/')
 
 cy.get('[data-cy="nav-interacciones-ui"]').click() 
-const email = 'miEmai@gmail.com'
-const password = '12345678'
-cy.login(email, password)
+
+cy.fixture('example.json').then((pepito) => {
+    cy.pepito(pepito.email, pepito.password)    
+ 
+    }   );
 cy.get('[data-cy="role-select"]').select('Manager')
 cy.contains('sms').click()
 //cy.get('[data-cy="interaction-form"]').contains('Push').click()
