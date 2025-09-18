@@ -1,10 +1,18 @@
 
-Cypress.Commands.add('pepito', (email, password) => {
 
-cy.get('[data-cy="email-input"]').type(email)
-cy.get('#username').type('Ceci')
-cy.get('input[type="password"]').eq(0).type(password)
-cy.get('.shadow-sm').eq(3).type(password)
+Cypress.Commands.add("login", () => {  
+  cy.fixture("user.json").then((userData) =>{
+  //cy.get('input[name="username"]').type(userData.username);
+  cy.get('[data-cy="input-email"]').type(userData.email);
+  cy.get('[data-cy="input-password"]').type(userData.password);
 
-})
+
+
+  cy.get('[data-cy="btn-login"]').click();
+
+
+ } )
+});
+
+
 
